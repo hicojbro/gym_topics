@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/src/middleware.ts"],"sourcesContent":["import { clerkMiddleware, createRouteMatcher } from \"@clerk/nextjs/server\";\nconst isProtectedRoute = createRouteMatcher([\"/settings(.*)\", \"/\"]);\n\nexport default clerkMiddleware((auth, req) => {\n  if (isProtectedRoute(req)) auth().protect();\n});\n\nexport const config = {\n  matcher: [\"/((?!.*\\\\..*|_next).*)\", \"/\", \"/(api|trpc)(.*)\"],\n};\n"],"names":[],"mappings":";;;;;;;;AACA,MAAM,mBAAmB,CAAA,GAAA,0KAAA,CAAA,qBAAkB,AAAD,EAAE;IAAC;IAAiB;CAAI;uCAEnD,CAAA,GAAA,6KAAA,CAAA,kBAAe,AAAD,EAAE,CAAC,MAAM;IACpC,IAAI,iBAAiB,MAAM,OAAO,OAAO;AAC3C;AAEO,MAAM,SAAS;IACpB,SAAS;QAAC;QAA0B;QAAK;KAAkB;AAC7D"}},
+    {"offset": {"line": 27, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
